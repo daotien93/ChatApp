@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { Route, Routes } from 'react-router-dom'
+import Homepage from './components/Homepage'
+import ChatPage from './components/ChatPage'
 
 const App = () => {
-  const [number, setNumber] = useState(0)
   return (
     <div>
-      <p>{number}</p>
-      <button onClick={() => setNumber(number + 1)}>
-        Click
-      </button>
+      <Routes>
+        <Route exact path="/" element={ <Homepage /> }></Route>
+        <Route exact path="/chats" element={ <ChatPage /> }></Route>
+      </Routes>  
     </div>
   )
 }
